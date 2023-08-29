@@ -12,17 +12,20 @@
   },
   "scripts": {
     "start": "ts-node src/index.ts",
-    "test": "ts-node -r tsconfig-paths/register node_modules/.bin/jest",
+    "test": "jest",
     "lint": "eslint ."
   },
   "devDependencies": {
     "@babel/core": "^7.22.11",
     "@babel/preset-env": "^7.22.10",
+    "@babel/preset-typescript": "^7.22.11",
+    "@jest/globals": "^29.6.4",
     "@typescript-eslint/eslint-plugin": "^6.5.0",
     "@typescript-eslint/parser": "^6.5.0",
     "babel-jest": "^29.6.4",
     "core-js": "^3.32.1",
     "eslint": "^8.48.0",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.2.0"
   }
 }
