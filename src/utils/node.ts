@@ -11,15 +11,29 @@ export class Node<T> implements ANode<T> {
     this.prev = null;
   }
 
-  setNextNode(element: ANode<T>) {
+  private checkNodeInstance(element: any): void {
     if (!(element instanceof Node)) {
-        throw new Error("To establish the next node, it must be an instance of the Node class")
+      throw new Error(
+        "The next or prev node must be an instance of the Node class. Please create a Node and then pass it as a value"
+      );
     }
+  }
 
+  setPrevNode(element: ANode<T>) {
+    this.checkNodeInstance(element);
+    this.prev = element;
+  }
+
+  setNextNode(element: ANode<T>) {
+    this.checkNodeInstance(element);
     this.next = element;
   }
 
   getNextNode() {
     return this.next;
+  }
+
+  getPrevNode() {
+    return this.prev;
   }
 }
